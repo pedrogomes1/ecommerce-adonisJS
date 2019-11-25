@@ -26,7 +26,7 @@ class CouponProductSchema extends Schema {
   }
 
   down () {
-    this.drop('coupon_products')
+    this.drop('coupon_product')
   }
 }
 

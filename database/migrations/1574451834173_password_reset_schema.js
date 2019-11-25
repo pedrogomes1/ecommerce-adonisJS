@@ -22,7 +22,7 @@ class PasswordResetSchema extends Schema {
   }
 
   down () {
-    this.drop('password_resets')
+    this.drop('password_reset')
   }
 }
 
