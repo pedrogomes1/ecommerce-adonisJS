@@ -5,10 +5,10 @@ const Schema = use('Schema')
 
 class OrderSchema extends Schema {
   up () {
-    this.create('orders', (table) => {
+    this.create('orders', (table) => { //Pedidos
       table.increments()
       table.decimal('total', 12,2).defaultTo(0.0)
-      table.integer('user_id').unsgined()
+      table.integer('user_id').unsigned()
       table.enu('status', [
         'pending',
         'paid',
@@ -24,6 +24,7 @@ class OrderSchema extends Schema {
       .inTable('users')
       .onDelete('CASCADE') 
     })
+    
   }
 
   down () {

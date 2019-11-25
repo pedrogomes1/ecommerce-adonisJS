@@ -16,9 +16,9 @@ class CategoryProductSchema extends Schema {
       .onDelete('CASCADE')
       
       table
-      .foreign('category')
+      .foreign('category_id')
       .references('id')
-      .inTable('category')
+      .inTable('categories')
       .onDelete('CASCADE')
     })
   }

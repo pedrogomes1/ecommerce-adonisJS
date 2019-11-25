@@ -5,11 +5,11 @@ const Schema = use('Schema')
 
 class CouponOrderSchema extends Schema {
   up () {
-    this.create('coupon_order', (table) => {
+    this.create('coupon_order', (table) => { //Descontos
       table.increments()
-      table.integer('coupon_id').unsigned();
-      table.integer('order_id').unsigned();
-      table.decimal('discount', 12, 2).defaultTo(0.0);
+      table.integer('coupon_id').unsigned() //Nao pode ser negativo
+      table.integer('order_id').unsigned()
+      table.decimal('discount', 12, 2).defaultTo(0.0)
       table.timestamps()
 
       table
@@ -20,7 +20,7 @@ class CouponOrderSchema extends Schema {
       table
       .foreign('order_id')
       .references('id')
-      .inTable('oders')
+      .inTable('orders')
       .onDelete('CASCADE')
     
     })

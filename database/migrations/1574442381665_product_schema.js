@@ -14,7 +14,7 @@ class ProductSchema extends Schema {
       table.timestamps()
 
       table
-      .foreing('image_id')
+      .foreign('image_id')
       .references('id')
       .inTable('images')
       .onDelete('CASCADE')

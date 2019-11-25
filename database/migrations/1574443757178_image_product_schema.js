@@ -11,12 +11,12 @@ class ImageProductSchema extends Schema {
     table.integer('image_id').unsigned()
     table.integer('product_id').unsigned()
     table
-    .foreing('image_id')
+    .foreign('image_id')
     .references('id')
     .inTable('images')
     .onDelete('CASCADE')
     table
-    .foreing('product_id')
+    .foreign('product_id')
     .references('id')
     .inTable('products')
     .onDelete('CASCADE')
