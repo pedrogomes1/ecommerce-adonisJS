@@ -11,8 +11,8 @@
 */
 
 const Factory = use('Factory')
-const Role = use ('Role')
-const User = use ('App/Models/User')
+const Role = use('Role')
+const User = use('App/Models/User')
 
 class ClientSeeder {
   async run () {
@@ -32,8 +32,8 @@ class ClientSeeder {
       password: '123'
     })
 
-    const admin = await Role.findBy('slug', 'admin')
-    await user.roles().attach ( [ role.id] )
+    const adminRole = await Role.findBy('slug', 'admin')
+    await user.roles().attach( [ adminRole.id] )
   }
 }
 
